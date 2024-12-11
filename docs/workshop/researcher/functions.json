@@ -25,6 +25,29 @@
   {
     "type": "function",
     "function": {
+      "name": "find_news",
+      "description": "Finds news on the web given a query. This function uses the Bing Search API to find news on the web given an entity or entities. The response includes the most relevant news from the web and should be used if you're not looking for general information or people, places, or things.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "An optimal search query to find news about an entity or entities on the web using the Bing Search API"
+          },
+          "market": {
+            "type": "string",
+            "description": "The market to search in, e.g. en-AU - it should match the language of the query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
       "name": "find_entities",
       "description": "Finds entities on the web given a query. This function uses the Bing Search API to find entities on the web given a query. This should be used to find people, places, or things but not news or general information.",
       "parameters": {
